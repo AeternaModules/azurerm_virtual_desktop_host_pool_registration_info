@@ -1,18 +1,18 @@
 output "virtual_desktop_host_pool_registration_infos_id" {
   description = "Map of id values across all virtual_desktop_host_pool_registration_infos, keyed the same as var.virtual_desktop_host_pool_registration_infos"
-  value       = { for k, v in azurerm_virtual_desktop_host_pool_registration_info.virtual_desktop_host_pool_registration_infos : k => v.id }
+  value       = { for k, v in azurerm_virtual_desktop_host_pool_registration_info.virtual_desktop_host_pool_registration_infos : k => v.id if v.id != null && length(v.id) > 0 }
 }
 output "virtual_desktop_host_pool_registration_infos_expiration_date" {
   description = "Map of expiration_date values across all virtual_desktop_host_pool_registration_infos, keyed the same as var.virtual_desktop_host_pool_registration_infos"
-  value       = { for k, v in azurerm_virtual_desktop_host_pool_registration_info.virtual_desktop_host_pool_registration_infos : k => v.expiration_date }
+  value       = { for k, v in azurerm_virtual_desktop_host_pool_registration_info.virtual_desktop_host_pool_registration_infos : k => v.expiration_date if v.expiration_date != null && length(v.expiration_date) > 0 }
 }
 output "virtual_desktop_host_pool_registration_infos_hostpool_id" {
   description = "Map of hostpool_id values across all virtual_desktop_host_pool_registration_infos, keyed the same as var.virtual_desktop_host_pool_registration_infos"
-  value       = { for k, v in azurerm_virtual_desktop_host_pool_registration_info.virtual_desktop_host_pool_registration_infos : k => v.hostpool_id }
+  value       = { for k, v in azurerm_virtual_desktop_host_pool_registration_info.virtual_desktop_host_pool_registration_infos : k => v.hostpool_id if v.hostpool_id != null && length(v.hostpool_id) > 0 }
 }
 output "virtual_desktop_host_pool_registration_infos_token" {
   description = "Map of token values across all virtual_desktop_host_pool_registration_infos, keyed the same as var.virtual_desktop_host_pool_registration_infos"
-  value       = { for k, v in azurerm_virtual_desktop_host_pool_registration_info.virtual_desktop_host_pool_registration_infos : k => v.token }
+  value       = { for k, v in azurerm_virtual_desktop_host_pool_registration_info.virtual_desktop_host_pool_registration_infos : k => v.token if v.token != null && length(v.token) > 0 }
   sensitive   = true
 }
 
